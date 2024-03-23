@@ -19,6 +19,13 @@ body {
   background: rgb(var(--background-start-rgb));
 }
 
+/* Styling the date input */
+input[type="date"] {
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-start-rgb));
+  border: 1px solid rgb(var(--input-border-color));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

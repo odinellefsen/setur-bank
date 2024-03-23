@@ -2,7 +2,7 @@
 
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import {useEffect, useState} from "react";
-import {UserButton} from "@clerk/nextjs";
+import {UserButton, useUser} from "@clerk/nextjs";
 import { ProfileForm } from "@/components/ui/ProfileForm";
 
 // Define a Person interface that matches the structure of your SQL table tuples
@@ -15,6 +15,12 @@ import { ProfileForm } from "@/components/ui/ProfileForm";
 // }
 
 export default function Home() {
+  // const { user } = useUser();
+
+  // if (!user) {
+  //   return <div>Loading...</div>;
+  // }
+
   // const [data, setData] = useState<Person[]>([]);
 
   // useEffect(() => {
@@ -35,28 +41,10 @@ export default function Home() {
   // };
 
   return (
-    <main className="flex flex-col items-center justify-between p-24">
+    <main className="flex flex-col space-y-4 items-center justify-between p-24">
       <UserButton />
-      <div>Monkey Business</div>
-      <ThemeToggle />
-      <ProfileForm />
+      <ThemeToggle/>
+      <ProfileForm/>
     </main>
   );
 }
-
-
-
-
-
-
-
-
-{/* <div className="flex flex-col items-center">
-  {data.map((person) => (
-    <div key={person.pTal} className="text-center mb-4">
-      <div><strong>pTal:</strong> {person.pTal}</div>
-      <div><strong>Name:</strong> {`${person.firstName} ${person.middleName} ${person.lastName}`}</div>
-      <div><strong>Date of Birth:</strong> {formatDate(person.dateOfBirth)}</div>
-    </div>
-  ))}
-</div> */}
